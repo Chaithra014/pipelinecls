@@ -6,7 +6,19 @@ pipeline
     stage('BUILD')
     {
       steps{
-            echo "this is buld stage"
+            echo "this is build stage"
+           }
+     }
+    stage('DEPLOY')
+    {
+      steps{
+            echo "this is deploy stage"
+           }
+     }
+    stage('TEST')
+    {
+      steps{
+            echo "this is test stage"
            }
      }
   }
