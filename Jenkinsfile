@@ -6,8 +6,10 @@ pipeline
     stage('BUILD')
     {
       steps{
+            sh '''
             echo "this is build stage"
             sleep 5
+            '''
            }
      }
     stage('DEPLOY')
