@@ -3,6 +3,7 @@ pipeline
     agent any;
     stages
     {
+        agent {label 'any'}
         if [ stage == master ]
         {
             stage('master')
