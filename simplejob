@@ -5,6 +5,8 @@ pipeline
     {
         stage('TEST')
         {
+          parallel
+          {
             stage('CHROME')
             {
              steps
@@ -19,6 +21,7 @@ pipeline
                 echo "deploying on opera server"
              }
             }
+          }
         }
     }
 }
