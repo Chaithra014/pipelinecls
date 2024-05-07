@@ -1,0 +1,28 @@
+pipeline
+{
+    agent any;
+    stages
+    {
+        stage('TEST')
+        {
+            parallel
+            {
+                stage('Test1')
+                {
+                    steps
+                    {
+                        echo "running on test1 server"
+                    }
+                }
+                stage('Test2')
+                {
+                    steps
+                    {
+                        echo "running on test2 server"
+                    }
+                }
+
+            }
+        }
+    }
+}
