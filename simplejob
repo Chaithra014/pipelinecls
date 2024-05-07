@@ -3,16 +3,16 @@ pipeline
     agent any;
     stages
     {
-        stage('Test')
+        stage('TEST')
         {
-            stage('chrome')
+            stage('CHROME')
             {
              steps
              {
                 echo "deploying on chrome server"
              }
             }
-            stage('opera')
+            stage('OPERA')
             {
              steps
              {
