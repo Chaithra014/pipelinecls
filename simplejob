@@ -6,14 +6,18 @@ pipeline
         stage('Test')
         {
             stage('chrome')
-            steps
             {
+             steps
+             {
                 echo "deploying on chrome server"
+             }
             }
             stage('opera')
-            steps
             {
+             steps
+             {
                 echo "deploying on opera server"
+             }
             }
         }
     }
