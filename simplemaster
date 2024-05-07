@@ -1,24 +1,25 @@
-pipeline
-{
-    agent any;
-    stages
-    {
-        agent {label 'any'}
-        if [ stage == master ]
-        {
-            stage('master')
-            steps
-            {
-                echo "this is from master branch"
+pipeline {
+    agent any
+    stages {
+        stage('master') {
+            when {
+                expression {
+                    return env.BRANCH_NAME == 'master'
+                }
+            }
+            steps {
+                echo "This is from the master branch"
             }
         }
-        stage('main')
-        {
-            steps
-            {
-                echo "this is from main branch"
+        stage('main') {
+            when {
+                expression {
+                    return env.BRANCH_NAME == 'main'
+                }
+            }
+            steps {
+                echo "This is from the main branch"
             }
         }
-
     }
 }
