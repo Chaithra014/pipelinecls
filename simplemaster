@@ -1,0 +1,23 @@
+pipeline
+{
+    agent any;
+    stages
+    {
+        if [ stage == master ]
+        {
+            stage('master')
+            steps
+            {
+                echo "this is from master branch"
+            }
+        }
+        stage('main')
+        {
+            steps
+            {
+                echo "this is from main branch"
+            }
+        }
+
+    }
+}
