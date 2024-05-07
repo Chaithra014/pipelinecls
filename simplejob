@@ -1,0 +1,20 @@
+pipeline
+{
+    agent any;
+    stages
+    {
+        stage('Test')
+        {
+            stage('chrome')
+            steps
+            {
+                echo "deploying on chrome server"
+            }
+            stage('opera')
+            steps
+            {
+                echo "deploying on opera server"
+            }
+        }
+    }
+}
