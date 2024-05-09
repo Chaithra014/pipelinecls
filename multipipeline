@@ -1,0 +1,70 @@
+pipeline
+{
+    agent any;
+    stages
+    {
+        stage('BUILD')
+        {
+            steps
+            {
+                echo "this is buildstep"
+            }
+        }
+        stage('DEPLOY')
+        {
+            steps
+            {
+                echo "this is deploystep"
+            }
+        }
+        stage('TEST')
+        {
+            steps
+            {
+                echo "this is teststep"
+            }
+        }
+        
+    }
+    matrix
+    {
+        axes
+        {
+            axis 
+            {
+                name :'OS'
+                value:'windows','linux'
+            }
+            axis 
+            {
+                name :'browser'
+                value:'opera','chrome'
+            }
+        }
+    }
+    stages
+    {
+        stage('BUILD')
+        {
+            steps
+            {
+                echo "this is buildstep on os:$(env.OS) and browser$(env.browser)"
+            }
+        }
+        stage('DEPLOY')
+        {
+            steps
+            {
+                echo "this is deploystep on os:$(env.OS) and browser$(env.browser)"
+            }
+        }
+        stage('TEST')
+        {
+            steps
+            {
+                echo "this is teststep on os:$(env.OS) and browser$(env.browser)"
+            }
+        }
+        
+
+}
