@@ -3,9 +3,10 @@ pipeline
     agent any;
     stages
     {
-        stage('BUILD')
+        stage('test')
         {
             steps{
+                
                 echo "this is build step "
             }
         }
