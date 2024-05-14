@@ -12,7 +12,7 @@ pipeline
 	      echo "this is build stagr"
 	     }
 	  }
-	stage('TES')
+	stage('TEST')
 	 {
 	   agent {label 'slave2'}
          parallel
